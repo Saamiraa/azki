@@ -1,0 +1,22 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 1.5rem;
+  box-shadow: 0 -0.0625rem 0.125rem 0 rgba(0, 0, 0, 0.12);
+  margin-top: 12px;
+}
+
+.footerSection {
+  line-height: 1.125rem;
+  cursor: pointer;
+}
+
+.footerTitle {
+  font-weight: 700;
+  font-size: 0.875rem;
+  padding-bottom: 0.25rem;
+}
+
+.footerItem {
+  font-size: 0.75rem;
+}

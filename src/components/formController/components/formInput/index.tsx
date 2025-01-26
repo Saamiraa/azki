@@ -2,9 +2,11 @@ import React from 'react'
 
 import { Input } from './types'
 
+import styles from './style.module.scss'
+
 const FormInput: React.FC<Input> = ({ type, name, id, value, error, onChange, placeholder }) => {
   return (
-    <div>
+    <div className={styles.inputContainer}>
       <input
         type={type}
         name={name}
@@ -12,8 +14,9 @@ const FormInput: React.FC<Input> = ({ type, name, id, value, error, onChange, pl
         value={value}
         onChange={onChange}
         placeholder={placeholder}
+        className={styles.input}
       />
-      {error[name] && <p>{error[name]}</p>}
+      {error[name] && <p className={styles.error}>{error[name]}</p>}
     </div>
   )
 }

@@ -1,0 +1,22 @@
+.formContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.forms {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.button {
+  margin: 0 auto;
+  padding-top: 1rem;
+}
+
+.formValidationText {
+  margin: 0 auto;
+  padding-top: 12px;
+  color: red;
+  font-size: 12px;
+}

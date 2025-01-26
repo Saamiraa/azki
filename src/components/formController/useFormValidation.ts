@@ -11,7 +11,6 @@ export const useFormValidation = () => {
 
   const dispatch = useDispatch();
   const error = useSelector((state: any) => state.form.error);
-  const status = useSelector((state: any) => state.form.status);
 
   const [formInfo, setFormInfo] = useState({
     name: '',
@@ -38,7 +37,7 @@ export const useFormValidation = () => {
     const updatedError = { ...error, [name]: fieldErrors[name] };
     dispatch(setError(updatedError));
 
-    setFormIsValid(Object.keys(allErrors).length === 0)
+    setFormIsValid(Object.keys(fieldErrors).length === 0)
   };
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -71,6 +70,5 @@ export const useFormValidation = () => {
     handleChangeInput,
     handleSubmit,
     error,
-    status
   };
 };
