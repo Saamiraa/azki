@@ -1,9 +1,9 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit"
 import { FormData, FormError, FormState } from "./types"
-import { FORM_STATUSES, FormStatus } from "./constants"
+import { Status, STATUSES } from "../../constant"
 
 const initialState: FormState = {
-  status: FORM_STATUSES.IDLE,
+  status: STATUSES.IDLE,
   formData: {
     name: '',
     lastName: '',
@@ -25,7 +25,7 @@ export const formSlice = createSlice({
     setFormData(state, action: PayloadAction<FormData>) {
       state.formData = action.payload
     },
-    setStatus(state, action: PayloadAction<FormStatus>) {
+    setStatus(state, action: PayloadAction<Status>) {
       state.status = action.payload
     },
     setError(state, action: PayloadAction<FormError>) {

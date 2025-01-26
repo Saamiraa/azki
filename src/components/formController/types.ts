@@ -1,4 +1,4 @@
-import { FormStatus } from "./constants"
+import { Status } from "../../constant"
 
 export interface FormData {
   name: string,
@@ -15,7 +15,7 @@ export interface FormError {
 }
 
 export interface FormState {
-  status: FormStatus,
+  status: Status,
   formData: FormData,
   error: FormError
 }

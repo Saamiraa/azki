@@ -2,9 +2,9 @@ import React from 'react';
 
 import FormInput from './components/formInput';
 import { useFormValidation } from './useFormValidation';
-import FormButton from './components/formButton';
 
 import styles from './style.module.scss'
+import Button from '../../shared-components/button';
 
 const FormController: React.FC = () => {
   const {
@@ -58,7 +58,7 @@ const FormController: React.FC = () => {
           />
         </div>
         <div className={styles.button}>
-          <FormButton text='ثبت فرم' />
+          <Button text='ثبت فرم' type='submit'/>
         </div>
         {!formIsValid && <p className={styles.formValidationText}>مشکلات فرم را تکمیل کنید.</p>}
       </form>

@@ -4,10 +4,13 @@ import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { setError, setStatus, setFormData } from './slice';
-import { FORM_STATUSES } from './constants';
 import validateForm from './utils';
+import { useNavigate } from 'react-router-dom';
+import { STATUSES } from '../../constant';
 
 export const useFormValidation = () => {
+
+  const navigate = useNavigate()
 
   const dispatch = useDispatch();
   const error = useSelector((state: any) => state.form.error);
@@ -56,10 +59,11 @@ export const useFormValidation = () => {
     }
 
     setFormIsValid(true);
-    dispatch(setStatus(FORM_STATUSES.LOADING));
+    dispatch(setStatus(STATUSES.LOADING));
     setTimeout(() => {
       dispatch(setFormData(formInfo));
-      dispatch(setStatus(FORM_STATUSES.SUCCESS));
+      dispatch(setStatus(STATUSES.SUCCESS));
+      navigate('/insurance')
     }, 3000);
   };
 

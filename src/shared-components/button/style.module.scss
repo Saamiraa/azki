@@ -22,3 +22,9 @@
   background-color: #1D4ED8;
   transform: scale(0.95);
 }
+
+.submitButton:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+  color: #666;
+}
