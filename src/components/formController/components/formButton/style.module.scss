@@ -1,0 +1,24 @@
+.submitButton {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 400;
+  color: white;
+  background-color: #3B82F6;
+  /* Base blue */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-family: 'Vazir';
+}
+
+.submitButton:hover {
+  background-color: #2563EB;
+  transform: scale(1.05);
+}
+
+.submitButton:active {
+  background-color: #1D4ED8;
+  transform: scale(0.95);
+}
