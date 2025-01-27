@@ -1,0 +1,12 @@
+.vehicleItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 30px;
+  border-bottom: 0.025rem solid rgb(11, 11, 11);
+  cursor: pointer;
+}
+
+.vehicleItem:last-child {
+  border-bottom: none;
+}
