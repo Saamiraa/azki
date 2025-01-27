@@ -9,6 +9,12 @@ import useFetchVehicleList from "./useFetchVehicleList";
 
 import VehicleListItem from "./components/vehicleListItem";
 import UsageListItem from "./components/usageListItem";
+import Loading from "../../shared-components/loading";
+import ErrorMessage from "../../shared-components/errorMessage";
+
+import { STATUSES } from "../../constant";
+
+import styles from './style.module.scss'
 
 const VehicleList: React.FC = () => {
   const { data: vehicles, status, fetchVehicleList } = useFetchVehicleList();
@@ -51,24 +57,34 @@ const VehicleList: React.FC = () => {
     dispatch(selectUsage(title))
   }
 
-  return (
-    <div>
-      {!selectedVehicleTitle && (
-        <VehicleListItem
-          vehicles={vehicles}
-          onVehicleClick={handleVehicleSelection}
-        />
-      )}
-      {selectedVehicleTitle && (
-        <UsageListItem
-          usages={selectedVehicleUsages}
-          onUsageClick={handleUsageSelection}
-          onBackButton={handleGoBack}
-          title={selectedVehicleTitle}
-        />
-      )}
-    </div>
-  );
+  const renderContent = () => {
+    if (status === STATUSES.LOADING) return <Loading />
+    if (status === STATUSES.ERROR) return (
+      <ErrorMessage
+        message="مشکلی پیش آمده است"
+        onRetry={fetchVehicleList}
+      />
+    )
+    return (
+      <div className={styles.vehicleListsContainer}>
+        {!selectedVehicleTitle && (
+          <VehicleListItem
+            vehicles={vehicles}
+            onVehicleClick={handleVehicleSelection}
+          />
+        )}
+        {selectedVehicleTitle && (
+          <UsageListItem
+            usages={selectedVehicleUsages}
+            onUsageClick={handleUsageSelection}
+            onBackButton={handleGoBack}
+            title={selectedVehicleTitle}
+          />
+        )}
+      </div>
+    );
+  }
+  return renderContent()
 }
 
 export default VehicleList

@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { fetchVehiclesData } from "./thunk";
 import { STATUSES } from "../../constant";
+
 import { VehicleState } from "./types";
 
 const initialState: VehicleState = {

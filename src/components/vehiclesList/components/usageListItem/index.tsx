@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
 import styles from "./style.module.scss";
+
 import Button from "../../../../shared-components/button";
 
 interface UsageListItemProps {
