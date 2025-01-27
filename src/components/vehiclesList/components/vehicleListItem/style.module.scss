@@ -1,4 +1,12 @@
-.vehicleItem {
+.title {
+  font-size: 16px;
+  margin: 0 0 15px;
+  text-align: right;
+  color: #008fff;
+  font-weight: 700;
+}
+
+.vehicleListItem {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -7,6 +15,6 @@
   cursor: pointer;
 }
 
-.vehicleItem:last-child {
+.vehicleListItem:last-child {
   border-bottom: none;
 }
