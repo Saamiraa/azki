@@ -6,9 +6,9 @@ export interface VehicleUsage {
 }
 
 export interface Vehicle {
-  id: number,
+  id?: number,
   title: string;
-  usages?: VehicleUsage[];
+  usages: VehicleUsage[];
 }
 
 export interface VehicleState {
@@ -17,9 +17,4 @@ export interface VehicleState {
   selectedVehicle: string;
   selectedVehicleUsages: VehicleUsage[];
   selectedUsageTitle: string;
-}
-
-export interface VehicleListProps {
-  data: { id: number; title: string; usages?: VehicleUsage[] }[];
-  onClick: (item: { id: number; title: string; usages?: VehicleUsage[] }) => void;
 }

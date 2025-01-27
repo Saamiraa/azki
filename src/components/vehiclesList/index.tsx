@@ -1,51 +1,106 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
-
 import { selectVehicle, selectUsage } from "./slice";
 import useFetchVehicleList from "./useFetchVehicleList";
-import VehicleItem from "./components/vehicleItem";
-import { Vehicle } from "./types";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import styles from "./style.module.scss";
 
-const VehiclesPage: React.FC = () => {
-  const { data: vehicles, status } = useFetchVehicleList();
+const VehicleList: React.FC = () => {
+  const { data: vehicles, status, fetchVehicleList } = useFetchVehicleList();
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const location = useLocation();
 
-  const selectedVehicle = useSelector((state: any) => state.vehicles.selectedVehicle);
-  const selectedUsages = useSelector((state: any) => state.vehicles.selectedVehicleUsages);
+  const selectedVehicleTitle = useSelector((state: any) => state.vehicles.selectedVehicle);
+  const selectedVehicleUsages = useSelector((state: any) => state.vehicles.selectedVehicleUsages);
 
-  const handleVehicleSelection = (vehicle: Vehicle) => {
-    const { id, title, usages=[] } = vehicle;
-    dispatch(selectVehicle({ id, title, usages }));
+  // Update the URL and select the vehicle
+  const handleVehicleSelection = (vehicleTitle: string, usages: any) => {
+    dispatch(selectVehicle({ title: vehicleTitle, usages }));
     navigate({
       pathname: "/vehicles",
-      search: `?type=${title}`,
+      search: `?type=${vehicleTitle}`,
     });
   };
 
+  // Update the selected usage
   const handleUsageSelection = (usageTitle: string) => {
     dispatch(selectUsage(usageTitle));
   };
 
+  // Render the list of vehicles
+  const renderVehicleList = () => (
+    <ul className={styles.vehicleList}>
+      {vehicles?.map((vehicle) => (
+        <li
+          onClick={() => handleVehicleSelection(vehicle.title, vehicle.usages)}
+          key={vehicle.id}
+          className={styles.vehicleListItem}
+        >
+          {vehicle.title}
+          <FontAwesomeIcon icon={faArrowLeft} />
+        </li>
+      ))}
+    </ul>
+  );
+
+  // Render the list of usages for the selected vehicle
+  const renderUsageList = () => (
+    <ul className={styles.usageList}>
+      {selectedVehicleUsages?.map((usage: any) => (
+        <li
+          onClick={() => handleUsageSelection(usage.title)}
+          key={usage.id}
+          className={styles.usageListItem}
+        >
+          {usage.title}
+          <FontAwesomeIcon icon={faArrowLeft} />
+        </li>
+      ))}
+    </ul>
+  );
+
+  // Handle the "Go Back" button
+  const handleGoBack = () => {
+    dispatch(selectVehicle(null));
+    navigate({
+      pathname: "/vehicles",
+    });
+  };
+
+  // Use effect to update state based on query params
+  useEffect(() => {
+    const queryParams = new URLSearchParams(location.search);
+    const vehicleTitleFromQuery = queryParams.get("type");
+
+    if (vehicleTitleFromQuery) {
+      const selectedVehicle = vehicles.find(
+        (vehicle) => vehicle.title === vehicleTitleFromQuery
+      );
+      if (selectedVehicle) {
+        dispatch(selectVehicle({ title: selectedVehicle.title, usages: selectedVehicle.usages }));
+      }
+    } else {
+      dispatch(selectVehicle(null)); // Clear selection if no vehicle in URL
+    }
+  }, [location, vehicles, dispatch]);
+
   return (
     <div>
-      {status === "loading" && <p>Loading vehicles...</p>}
-      {status === "error" && <p>Failed to load vehicles. Please try again.</p>}
-
-      {selectedVehicle ? (
-        <VehicleItem
-          data={selectedUsages}
-          onClick={(usage) => handleUsageSelection(usage.title)}
-        />
+      {!selectedVehicleTitle ? (
+        <div>{renderVehicleList()}</div>
       ) : (
-        <VehicleItem
-          data={vehicles}
-          onClick={(vehicle) => handleVehicleSelection(vehicle)}
-        />
+        <div>
+          <button onClick={handleGoBack} className={styles.goBackButton}>
+            Go Back
+          </button>
+          {renderUsageList()}
+        </div>
       )}
     </div>
   );
 };
 
-export default VehiclesPage;
+export default VehicleList;

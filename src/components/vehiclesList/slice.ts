@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { fetchVehiclesData } from "./thunk";
 import { STATUSES } from "../../constant";
-import { VehicleState, Vehicle } from "./types";
+import { VehicleState } from "./types";
 
 const initialState: VehicleState = {
   status: STATUSES.IDLE,
@@ -15,7 +15,7 @@ export const vehiclesSlice = createSlice({
   name: "vehicles",
   initialState,
   reducers: {
-    selectVehicle(state, action: { payload: Vehicle | null }) {
+    selectVehicle(state, action) {
       if (!action.payload) {
         state.selectedVehicle = '';
         state.selectedVehicleUsages = [];

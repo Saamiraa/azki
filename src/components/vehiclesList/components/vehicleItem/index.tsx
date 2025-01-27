@@ -11,10 +11,10 @@ const VehicleItem: React.FC<VehicleListProps> = ({ data, onClick }) => {
     <div>
       <ul className={styles.vehicleList}>
         {data?.map((item) => (
-          <div className={styles.vehicleItem}>
+          <div key={item.id}
+            className={styles.vehicleItem}>
             <li
               onClick={() => onClick(item)}
-              key={item.id}
               className={styles.vehicleListItem}
             >
               {item.title}
