@@ -1,19 +1,24 @@
-import { Outlet } from "react-router-dom"
 
-import styles from './style.module.scss'
-import Header from "./header"
-import Footer from "./footer"
+import React from "react";
 
-function Layout() {
+import RightPanel from "./components/rightPanel";
+import LeftPanel from "./components/leftPanel";
+
+import styles from "./style.module.scss";
+
+import carImage from '../../assets/icons/car-green.svg'
+
+const Layout: React.FC = () => {
   return (
-    <div className={styles.layout}>
-      <Header />
-      <main className={styles.main}>
-        <Outlet />
-      </main>
-      <Footer />
+    <div className={styles.layoutContainer}>
+      <RightPanel />
+      <LeftPanel />
+      <img
+        src={carImage}
+        alt="car logo"
+        className={styles.image}
+      />
     </div>
-  )
+  );
 }
-
-export default Layout
+export default Layout;

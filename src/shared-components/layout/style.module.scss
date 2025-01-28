@@ -1,7 +1,8 @@
-.layout {
+.layoutContainer {
   display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+  height: 100vh;
+  background-color: #f9f9f9;
+  position: relative;
 }
 
 .main {
@@ -10,5 +11,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 3.75rem;
+}
+
+.image {
+  width: 580px;
+  max-width: 520px;
+  min-width: 400px;
+  position: absolute;
+  left: 2rem;
+  bottom: 2rem;
 }

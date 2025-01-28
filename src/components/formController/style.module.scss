@@ -9,14 +9,21 @@
   gap: 1rem;
 }
 
+.namesInfo {
+  display: flex;
+  gap: 12px;
+}
+
 .button {
-  margin: 0 auto;
-  padding-top: 1rem;
+  padding-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-self: flex-end;
 }
 
 .formValidationText {
-  margin: 0 auto;
   padding-top: 12px;
   color: red;
   font-size: 12px;
+  margin: 0 auto;
 }

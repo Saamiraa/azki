@@ -20,24 +20,26 @@ const FormController: React.FC = () => {
     return (
       <form className={styles.formContainer} onSubmit={handleSubmit}>
         <div className={styles.forms}>
-          <FormInput
-            type="text"
-            name="name"
-            id="name"
-            value={formInfo.name}
-            onChange={handleChangeInput}
-            placeholder="نام خود را وارد کنید."
-            error={error}
-          />
-          <FormInput
-            type="text"
-            name="lastName"
-            id="lastName"
-            value={formInfo.lastName}
-            onChange={handleChangeInput}
-            placeholder="نام خانوادگی خود را وارد کنید."
-            error={error}
-          />
+          <div className={styles.namesInfo}>
+            <FormInput
+              type="text"
+              name="name"
+              id="name"
+              value={formInfo.name}
+              onChange={handleChangeInput}
+              placeholder="نام خود را وارد کنید."
+              error={error}
+            />
+            <FormInput
+              type="text"
+              name="lastName"
+              id="lastName"
+              value={formInfo.lastName}
+              onChange={handleChangeInput}
+              placeholder="نام خانوادگی خود را وارد کنید."
+              error={error}
+            />
+          </div>
           <FormInput
             type="text"
             name="phoneNumber"
@@ -58,9 +60,9 @@ const FormController: React.FC = () => {
           />
         </div>
         <div className={styles.button}>
-          <Button text='ثبت فرم' type='submit'/>
+          <Button text='ثبت فرم' type='submit' />
+          {!formIsValid && <p className={styles.formValidationText}>مشکلات فرم را تکمیل کنید.</p>}
         </div>
-        {!formIsValid && <p className={styles.formValidationText}>مشکلات فرم را تکمیل کنید.</p>}
       </form>
     );
   };
