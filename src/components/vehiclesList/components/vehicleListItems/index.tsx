@@ -27,11 +27,11 @@ const VehicleListItems: React.FC<VehicleListItemProps> = ({ vehicles, usages, on
   }
 
   const handleProceedToNextStep = () => {
-    console.log('test')
+    navigate('/insurance-providers')
   }
 
   return (
-    <div>
+    <div className={styles.vehicleListsContainer}>
       <h3 className={styles.title}>نوع و مدل خودروی خود را انتخاب کنید.</h3>
       <div className={styles.selectItems}>
         <SelectDropdown
@@ -53,7 +53,7 @@ const VehicleListItems: React.FC<VehicleListItemProps> = ({ vehicles, usages, on
       <div className={styles.buttons}>
         <NavigationButton text="بازگشت" onClick={handleNavigateToInsurance} />
         <NavigationButton
-          text="مرحله بعدی"
+          text="مرحله بعد"
           disabled={!selectedVehicle || !selectedUsage}
           onClick={handleProceedToNextStep}
         />
