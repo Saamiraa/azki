@@ -2,13 +2,13 @@ import React from "react";
 
 import VehiclesList from "../../components/vehiclesList";
 
-import styles from './style.module.scss'
+import ContentWrapper from "../../shared-components/contentWrapper";
 
 const Vehicles: React.FC = () => {
   return (
-    <div className={styles.vehiclesContainer}>
+    <ContentWrapper title="بیمه شخص ثالث">
       <VehiclesList />
-    </div>
+    </ContentWrapper>
   )
 }
 

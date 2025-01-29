@@ -4,7 +4,7 @@ import { ButtonProps } from "./types";
 
 import styles from './style.module.scss'
 
-const Button: React.FC<ButtonProps> = ({ type, text, disabled,onClick }) => {
+const ActionButton: React.FC<ButtonProps> = ({ type, text, disabled,onClick }) => {
   return (
     <button
       type={type}
@@ -17,4 +17,4 @@ const Button: React.FC<ButtonProps> = ({ type, text, disabled,onClick }) => {
   )
 }
 
-export default Button;
+export default ActionButton;

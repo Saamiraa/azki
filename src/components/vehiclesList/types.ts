@@ -6,7 +6,7 @@ export interface VehicleUsage {
 export interface Vehicle {
   id?: number,
   title: string;
-  usages: VehicleUsage[];
+  usages?: VehicleUsage[];
 }
 export interface VehicleState {
   status: Status;

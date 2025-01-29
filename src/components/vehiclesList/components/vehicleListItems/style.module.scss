@@ -1,9 +1,15 @@
+.selectItems {
+  width: 100%;
+  display: flex;
+  gap: 12px;
+}
+
 .title {
-  font-size: 16px;
   margin: 0 0 15px;
   text-align: right;
-  color: #008fff;
-  font-weight: 700;
+  font-size: 14px;
+  color: #7e7e7e;
+  font-weight: 500;
 }
 
 .vehicleListItem {
@@ -17,4 +23,10 @@
 
 .vehicleListItem:last-child {
   border-bottom: none;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 22px;
 }
