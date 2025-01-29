@@ -1,10 +1,11 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React from 'react'
+import React, { useState } from 'react'
 import SelectDropdown from '../../../../shared-components/selectDropdown'
 import styles from './style.module.scss'
 import { useSelector } from 'react-redux'
 import { Discounts } from '../../types'
 import ActionButton from '../../../../shared-components/actionButton'
+import InsuranceDataResults from '../../../InsuranceDataResults'
 
 interface InsuranceDiscountItemProps {
   discounts: Discounts[];
@@ -17,8 +18,14 @@ const InsuranceDiscountItem: React.FC<InsuranceDiscountItemProps> = ({ discounts
   const selectedDiscount = useSelector((state: any) => state.discount.selectedInsuranceDiscount)
   const selectedDiscountDriver = useSelector((state: any) => state.discount.selectedInsuranceDriverDiscount)
 
+  const [isModalOpen, setIsModalOpen] = useState(false)
 
-  const handleShowResults = () => {
+  const openModal = () => {
+    setIsModalOpen(true)
+  }
+
+  const closeModal = () => {
+    setIsModalOpen(false)
   }
 
   return (
@@ -40,10 +47,11 @@ const InsuranceDiscountItem: React.FC<InsuranceDiscountItemProps> = ({ discounts
         <ActionButton
           type="button"
           text="استعلام قیمت"
-          onClick={handleShowResults}
+          onClick={openModal}
           disabled={!selectedDiscount || !selectedDiscountDriver}
         />
       </div>
+      {isModalOpen && <InsuranceDataResults onClose={closeModal} />}
     </div>
   )
 }
