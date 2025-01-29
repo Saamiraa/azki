@@ -1,0 +1,24 @@
+.insuranceDiscountContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px
+}
+
+.selectItems {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.title {
+  text-align: right;
+  font-size: 14px;
+  color: #7e7e7e;
+  font-weight: 500;
+}
+
+.button {
+  display: flex;
+  align-self: end;
+}

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React from 'react'
 import SelectDropdown from '../../../../shared-components/selectDropdown'
 import NavigationButton from '../../../../shared-components/navigationButton'
@@ -18,8 +19,7 @@ const InsuranceProvidersItem: React.FC<InsuranceProvidersItemProps> = ({ provide
   const navigate = useNavigate()
 
   const handleProceedToNextStep = () => {
-    console.log('test')
-
+    navigate('/insurance-discount')
   }
   const handleNavigateToVehicles = () => {
     navigate('/vehicles')
@@ -30,7 +30,7 @@ const InsuranceProvidersItem: React.FC<InsuranceProvidersItemProps> = ({ provide
       <h3 className={styles.title}>شرکت بیمه‌گر قبلی خود را در این بخش وارد کنید.</h3>
       <div className={styles.selectItems}>
         <SelectDropdown
-          value={selectedInsuranceProvider || 'شرکت بیمه‌گر قبلی'}
+          value={selectedInsuranceProvider || 'درصد تخفیف ثالث'}
           data={providers}
           onChange={(e) => onProvidersClick(e.target.value)}
         />

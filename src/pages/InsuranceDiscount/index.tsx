@@ -1,13 +1,13 @@
 import React from 'react'
-import InsuranceProvidersList from '../../components/InsuranceProvidersList'
 import ContentWrapper from '../../shared-components/contentWrapper'
+import InsuranceDiscountList from '../../components/InsuranceDiscountList'
 
-const InsuranceProviders: React.FC = () => {
+const InsuranceDiscount: React.FC = () => {
   return (
     <ContentWrapper title='بیمه شخص ثالث'>
-      <InsuranceProvidersList />
+      <InsuranceDiscountList />
     </ContentWrapper>
   )
 }
 
-export default InsuranceProviders
+export default InsuranceDiscount

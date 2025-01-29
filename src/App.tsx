@@ -6,6 +6,7 @@ import Form from "./pages/form"
 import Insurance from "./pages/Insurance"
 import Vehicles from "./pages/vehicles"
 import InsuranceProviders from "./pages/insuranceProviders"
+import InsuranceDiscount from "./pages/InsuranceDiscount"
 
 const App: React.FC = () => {
   return (
@@ -16,6 +17,7 @@ const App: React.FC = () => {
           <Route path="/insurance" element={<Insurance />} />
           <Route path="/vehicles" element={<Vehicles />} />
           <Route path="/insurance-providers" element={<InsuranceProviders />} />
+          <Route path="/insurance-discount" element={<InsuranceDiscount />} />
         </Route>
       </Routes>
     </Router>
