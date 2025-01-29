@@ -1,0 +1,29 @@
+.submitButton {
+  outline: none;
+  border: 0.02px solid #cccccc;
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.image {
+  width: 60px;
+}
+
+.title {
+  font-size: 18px;
+  font-family: 'Vazir';
+  color: rgb(1, 1, 1);
+}
+
+.submitButton:disabled {
+  background-color: #faf9f9;
+  opacity: 0.5;
+}
