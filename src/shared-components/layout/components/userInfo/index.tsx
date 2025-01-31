@@ -7,7 +7,6 @@ import { useSelector } from "react-redux";
 
 const UserInfo: React.FC = () => {
   const firstName = useSelector((state: any) => state.form.formData.name)
-  console.log('firstName', firstName)
 
   return (
     <div className={styles.userInfoContainer}>
