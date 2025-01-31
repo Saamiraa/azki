@@ -16,9 +16,9 @@ This project implements a **multi-step insurance selection system**, allowing us
 - **Other insurance types are disabled**.  
 - Clicking **Next** navigates to vehicle selection.  
 
-### **Page 3: Select Vehicle Type & Model**  
+### **Page 3: Select Vehicle Type & Detail Type**  
 - Fetches **vehicle types** via the `getVehicleTypes` API.  
-- Once a vehicle type is selected, users can **choose a model** from the available options.  
+- Once a vehicle type is selected, users can **choose a Detail Type** from the available options.  
 - The **Back button** is always enabled.  
 - The **Next button** is enabled only when valid selections are made.  
 
@@ -37,6 +37,7 @@ This project implements a **multi-step insurance selection system**, allowing us
 ## 🔧 Tech Stack  
 
 ### **Frontend**  
+- **React** for component-based UI.
 - **React + TypeScript** for better type safety and maintainability.  
 - **Redux Toolkit** for state management.  
 - **CSS Modules & SASS** for styling.  
