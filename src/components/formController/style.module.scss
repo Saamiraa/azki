@@ -16,6 +16,10 @@
 .namesInfo {
   display: flex;
   gap: 12px;
+
+  @media screen and (max-width:48rem) {
+    flex-direction: column;
+  }
 }
 
 .button {
