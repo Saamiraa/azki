@@ -48,7 +48,7 @@ This project implements a **multi-step insurance selection system** where users 
 
 1. **Clone this repository:**  
    ```sh
-   git clone https://github.com/Saamiraa/azki.git
+git clone https://github.com/Saamiraa/azki.git --depth 1
 2. **Navigate into the project directory:** 
    ```sh
    cd azki
