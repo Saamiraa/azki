@@ -1,12 +1,13 @@
 import React from "react";
-import styles from "./style.module.scss";
+
 import { useLocation } from "react-router-dom";
+
 import UserInfo from "../userInfo";
 
+import styles from "./style.module.scss";
 
 const LeftPanel: React.FC = () => {
   const location = useLocation();
-
 
   return (
     <div className={styles.leftPanel}>

@@ -1,13 +1,19 @@
 import React from 'react'
+
+import { useDispatch } from 'react-redux'
+
+import { selectInsuranceProvider } from './slice'
+
 import useFetchProvidersList from './useFetchProvidersList'
+
+import InsuranceProvidersItem from './components/InsuranceProvidersItem'
+
 import { STATUSES } from '../../constant'
+
 import Loading from '../../shared-components/loading'
 import ErrorMessage from '../../shared-components/errorMessage'
 
 import styles from './style.module.scss'
-import InsuranceProvidersItem from './components/InsuranceProvidersItem'
-import { useDispatch } from 'react-redux'
-import { selectInsuranceProvider } from './slice'
 
 const InsuranceProvidersList: React.FC = () => {
   const { data, status, fetchProvidersList } = useFetchProvidersList()

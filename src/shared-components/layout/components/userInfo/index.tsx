@@ -1,9 +1,11 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React from 'react';
-import user from '../../../../assets/icons/user.svg'
-import styles from './style.module.scss'
 
 import { useSelector } from "react-redux";
+
+import user from '../../../../assets/icons/user.svg'
+
+import styles from './style.module.scss'
 
 const UserInfo: React.FC = () => {
   const firstName = useSelector((state: any) => state.form.formData.name)

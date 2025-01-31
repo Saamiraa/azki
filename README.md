@@ -51,13 +51,13 @@ This project implements a **multi-step insurance selection system** where users 
 git clone https://github.com/Saamiraa/azki.git --depth 1
 2. **Navigate into the project directory:** 
    ```sh
-   cd azki
+cd azki
 3. **Install dependencies:** 
    ```sh
-   npm install
+npm install
 4. **Start the development server:** 
    ```sh
-   npm run dev
+npm run dev
 
 
 ### ⚠️ CORS Policy  
@@ -73,3 +73,5 @@ You can start your browser with **CORS disabled**:
 - **Google Chrome (Windows)**: 
   ```sh
   chrome.exe --disable-web-security --user-data-dir="C:\chrome_dev_cors"
+
+####

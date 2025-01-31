@@ -1,8 +1,12 @@
 import React from 'react'
-import Modal from '../InsuranceDiscountList/components/modal'
+
 import { useInsuranceData } from './useInsuranceData'
-import styles from './style.module.scss'
+
+import Modal from '../InsuranceDiscountList/components/modal'
+
 import FieldDisplay from './components/fieldDisplay'
+
+import styles from './style.module.scss'
 
 interface InsuranceDataResultsProps {
   onClose: () => void

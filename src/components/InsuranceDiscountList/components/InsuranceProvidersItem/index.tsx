@@ -1,12 +1,16 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useState } from 'react'
-import SelectDropdown from '../../../../shared-components/selectDropdown'
-import styles from './style.module.scss'
+
 import { useSelector } from 'react-redux'
-import { Discounts } from '../../types'
-import ActionButton from '../../../../shared-components/actionButton'
+
 import InsuranceDataResults from '../../../InsuranceDataResults'
 
+import SelectDropdown from '../../../../shared-components/selectDropdown'
+import ActionButton from '../../../../shared-components/actionButton'
+
+import { Discounts } from '../../types'
+
+import styles from './style.module.scss'
 interface InsuranceDiscountItemProps {
   discounts: Discounts[];
   onDiscountClick: (discountTitle: string) => void;

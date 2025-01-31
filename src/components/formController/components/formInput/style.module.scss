@@ -12,16 +12,29 @@
   border: 0.05px solid #ccc;
   border-radius: 4px;
   font-family: 'Vazir';
+  min-height: 60px;
+  max-height: 60px;
 
 
   &::placeholder {
     font-family: 'Vazir';
-    font-size: 12px;
+    font-size: 14px;
+  }
+
+  @media screen and (max-width: 48rem) {
+    min-height: 40px;
+    max-height: 40px;
+    font-size: 14px;
+
+    &::placeholder {
+      font-family: 'Vazir';
+      font-size: 12px;
+    }
   }
 }
 
 .error {
-  font-size: 10px;
+  font-size: 12px;
   color: red;
   padding-top: 8px;
 }

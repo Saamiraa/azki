@@ -1,9 +1,10 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React from 'react';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
-import styles from './style.module.scss';
 
+import styles from './style.module.scss';
 interface SelectDropdownProps {
   onChange: (event: React.ChangeEvent<HTMLSelectElement>) => void;
   value: string;

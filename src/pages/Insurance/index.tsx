@@ -1,11 +1,13 @@
 import React from "react"
+
 import { useNavigate } from "react-router-dom"
 
-import styles from './style.module.scss'
 import ContentWrapper from "../../shared-components/contentWrapper"
 import InsuranceButton from "../../components/InsuranceButton"
 
 import insuranceLogo from '../../assets/icons/insurance.svg'
+
+import styles from './style.module.scss'
 
 const Insurance: React.FC = () => {
 

@@ -18,8 +18,15 @@
   font-weight: 500;
 }
 
+.title {
+  font-size: 16px;
+
+  @media screen and (max-width:48rem) {
+    font-size: 12px;
+  }
+}
+
 .userInfoContainer {
-  width: 100%;
   display: none;
 
   @media screen and (max-width:48rem) {

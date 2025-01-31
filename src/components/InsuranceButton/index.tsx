@@ -1,6 +1,7 @@
 import React from 'react'
 
 import styles from './style.module.scss'
+
 import { InsuranceButtonProps } from './types';
 
 const InsuranceButton: React.FC<InsuranceButtonProps> = ({ type, text, disabled, onClick, icon, alt }) => {

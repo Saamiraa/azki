@@ -1,13 +1,19 @@
 import React from 'react'
-import { STATUSES } from '../../constant'
+
+import { useDispatch } from 'react-redux'
+
+import useFetchDiscountList from './useFetchDiscountList'
+
+import { selectedInsuranceDriverDiscount, selectInsuranceDiscount } from './slice'
+
+import InsuranceDiscountItem from './components/InsuranceProvidersItem'
+
 import Loading from '../../shared-components/loading'
 import ErrorMessage from '../../shared-components/errorMessage'
 
+import { STATUSES } from '../../constant'
+
 import styles from './style.module.scss'
-import { useDispatch } from 'react-redux'
-import useFetchDiscountList from './useFetchDiscountList'
-import { selectedInsuranceDriverDiscount, selectInsuranceDiscount } from './slice'
-import InsuranceDiscountItem from './components/InsuranceProvidersItem'
 
 const InsuranceDiscountList: React.FC = () => {
   const { data, status, fetchDiscountList } = useFetchDiscountList()

@@ -22,11 +22,11 @@ const validateForm = (name: string, value: string) => {
       break;
     }
     case 'password': {
-      const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])[A-Za-z]{4,10}$/;
+      const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{4,10}$/;
       if (!value) {
         errors[name] = 'وارد کردن فیلد الزامی است.';
       } else if (!passwordRegex.test(value)) {
-        errors[name] = 'رمز ورود باید شامل یک عدد حرف کوچیک و بزرگ و حداقل ۴ و حداکثر ۱۰ کاراکتر داشته باشد.';
+        errors[name] = 'رمز ورود باید شامل حداقل یک عدد، یک حرف کوچک، یک حرف بزرگ باشد و بین ۴ تا ۱۰ کاراکتر داشته باشد.';
       }
       break;
     }
