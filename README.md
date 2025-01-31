@@ -1,23 +1,16 @@
 # 🚗 Insurance Selection App  
 
-This project implements a **multi-step insurance selection system** where users can register, choose an insurance type, select a vehicle, pick an insurance provider, and apply discounts. Built using **Vite, React, Redux Toolkit, CSS Modules, and SASS**.  
+This project implements a **multi-step insurance selection system** where users can register, choose an insurance type, select a vehicle, pick an insurance provider, and apply discounts. Built using **Vite, React, Redux Toolkit, TypeScript, CSS Modules, and SASS**.  
 
 ## 📌 Features  
 
 ### **Page 1: User Registration**  
-- A form for user registration with the following validation rules:  
-  - **All fields are required**.  
-  - **Mobile number** must be in the correct format.  
-  - **Full Name** should only contain **Persian characters**.  
-  - **Password** must include:
-    - At least **one digit**.  
-    - At least **one uppercase and one lowercase Latin letter**.  
-    - Be between **4 to 10 characters long**.  
+- A form for user registration with validation rules.
 - Displays **error messages** when validation fails.  
 - On successful registration, the **user’s name appears in the Navbar**, and they are redirected to the insurance selection page.  
 
 ### **Page 2: Select Insurance Type**  
-- Users can choose **Third-Party Insurance** (mandatory).  
+- Users can choose **Third-Party Insurance**
 - **Other insurance types are disabled**.  
 - Clicking **Next** navigates to vehicle selection.  
 
@@ -40,7 +33,7 @@ This project implements a **multi-step insurance selection system** where users 
 ## 🔧 Tech Stack  
 
 ### **Frontend**  
-- **React** with React Router for navigation.  
+- **React + TypeScript** for better type safety and maintainability.
 - **Redux Toolkit** for state management.  
 - **CSS Modules & SASS** for styling.  
 - **Vite** for fast development.  
@@ -55,5 +48,13 @@ This project implements a **multi-step insurance selection system** where users 
 
 1. **Clone this repository:**  
    ```sh
-   git clone https://github.com/your-repo-url.git
-   cd your-repo
+   git clone https://github.com/Saamiraa/azki.git
+2. **Navigate into the project directory:** 
+   ```sh
+   cd azki
+3. **Install dependencies:** 
+   ```sh
+   npm install
+4. **Start the development server:** 
+   ```sh
+   npm run dev
