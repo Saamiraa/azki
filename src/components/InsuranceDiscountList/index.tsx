@@ -26,7 +26,7 @@ const InsuranceDiscountList: React.FC = () => {
     if (status === STATUSES.LOADING) return <Loading />
     if (status === STATUSES.ERROR) return (
       <ErrorMessage
-        message="مشکلی پیش آمده است"
+        message="مشکلی پیش آمده است. دوباره تلاش کنید."
         onRetry={fetchDiscountList}
       />
     )

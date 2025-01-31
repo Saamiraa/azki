@@ -36,11 +36,16 @@ const InsuranceProvidersItem: React.FC<InsuranceProvidersItemProps> = ({ provide
         />
       </div>
       <div className={styles.buttons}>
-        <NavigationButton text="مرحله قبل" onClick={handleNavigateToVehicles} />
+        <NavigationButton
+          text="مرحله قبل"
+          onClick={handleNavigateToVehicles}
+          iconPosition="right"
+        />
         <NavigationButton
           text="مرحله بعد"
           disabled={!selectedInsuranceProvider}
           onClick={handleProceedToNextStep}
+          iconPosition="left"
         />
       </div>
     </div>

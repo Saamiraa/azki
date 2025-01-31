@@ -51,11 +51,16 @@ const VehicleListItems: React.FC<VehicleListItemProps> = ({ vehicles, usages, on
         />
       </div>
       <div className={styles.buttons}>
-        <NavigationButton text="بازگشت" onClick={handleNavigateToInsurance} />
+        <NavigationButton
+          text="بازگشت"
+          onClick={handleNavigateToInsurance}
+          iconPosition="right"
+        />
         <NavigationButton
           text="مرحله بعد"
           disabled={!selectedVehicle || !selectedUsage}
           onClick={handleProceedToNextStep}
+          iconPosition="left"
         />
       </div>
     </div>

@@ -1,5 +1,8 @@
 .navigationButton {
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
   padding: 10px 20px;
   font-size: 16px;
   font-weight: 400;
@@ -17,7 +20,6 @@
   background-color: #0a8263;
   transform: scale(1.05);
   color: #fff;
-
 }
 
 .navigationButton:active {
@@ -27,8 +29,27 @@
 }
 
 .navigationButton:disabled {
-  background-color: #ccc;
+  opacity: 0.5;
+  background-color: #fff;
   cursor: not-allowed;
-  color: #666;
+  color: #2fbd98;
   border: 0.05px solid #ccc;
+}
+
+.ButtonArrow {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.iconLeft {
+  width: 16px;
+  height: 16px;
+  transform: rotate(0deg);
+}
+
+.iconRight {
+  width: 16px;
+  height: 16px;
+  transform: rotate(180deg);
 }

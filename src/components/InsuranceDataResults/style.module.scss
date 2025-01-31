@@ -1,0 +1,19 @@
+.resultContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr; 
+  gap: 10px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.header {
+  padding-bottom: 22px;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.row {
+  display: contents;
+}

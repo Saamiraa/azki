@@ -4,7 +4,7 @@ import { ButtonProps } from "./types";
 
 import styles from './style.module.scss'
 
-const ActionButton: React.FC<ButtonProps> = ({ type, text, disabled,onClick }) => {
+const ActionButton: React.FC<ButtonProps> = ({ type, text, disabled, onClick }) => {
   return (
     <button
       type={type}
