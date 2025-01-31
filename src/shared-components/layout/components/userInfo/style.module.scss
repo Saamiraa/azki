@@ -1,0 +1,23 @@
+.userInfoContainer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: flex-end;
+  width: 100%;
+
+  @media screen and (max-width:48rem) {
+    gap: 6px;
+  }
+}
+
+.userName {
+  font-size: 16px;
+}
+
+.image {
+  width: 40px;
+
+  @media screen and (max-width:48rem) {
+    gap: 20px;
+  }
+}

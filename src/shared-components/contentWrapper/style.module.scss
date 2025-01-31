@@ -2,13 +2,17 @@
   margin-top: 40px;
   padding-right: 60px;
   width: 100%;
-  max-width: 500px;
-  min-width: 500px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-left: 60px;
+  padding-left: 200px;
+
+  @media screen and (max-width: 48rem) {
+    margin-top: 20px;
+    padding: 0;
+    width: 100%;
+  }
 }
 
 .title {
@@ -16,6 +20,11 @@
   text-align: right;
   font-weight: 700;
   width: 100%;
+
+  @media screen and (max-width: 48rem) {
+    margin-top: 18px;
+    text-align: center;
+  }
 }
 
 .contentArea {

@@ -3,13 +3,25 @@
   background: #f4f4f4;
   padding: 8px;
   border: 1px solid #ddd;
+
+  @media screen and (max-width:48rem) {
+    font-size: 14px;
+  }
 }
 
 .value {
   padding: 8px;
   border: 1px solid #ddd;
+
+  @media screen and (max-width:48rem) {
+    font-size: 14px;
+  }
 }
 
 .error {
   color: red;
+
+  @media screen and (max-width:48rem) {
+    font-size: 14px;
+  }
 }

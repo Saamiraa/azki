@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./style.module.scss";
 import { useLocation } from "react-router-dom";
-import UserInfo from "./components/userInfo";
+import UserInfo from "../userInfo";
 
 
 const LeftPanel: React.FC = () => {
@@ -10,8 +10,8 @@ const LeftPanel: React.FC = () => {
 
   return (
     <div className={styles.leftPanel}>
-      <div className={styles.leftContainer}>
-        {location.pathname === '/' ? <h2>ثبت نام</h2> : <UserInfo />}
+      <div className={styles.userInfoContainer}>
+        {location.pathname === '/' ? <h2 className={styles.title}>ثبت نام</h2> : <UserInfo />}
       </div>
     </div>
   );

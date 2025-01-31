@@ -1,7 +1,11 @@
 .insuranceDiscountContainer {
   display: flex;
   flex-direction: column;
-  gap: 20px
+  gap: 20px;
+
+  @media screen and (max-width:48rem) {
+    gap: 16px;
+  }
 }
 
 .selectItems {
@@ -16,6 +20,10 @@
   font-size: 14px;
   color: #7e7e7e;
   font-weight: 500;
+
+  @media screen and (max-width:48rem) {
+    font-size: 12px;
+  }
 }
 
 .button {

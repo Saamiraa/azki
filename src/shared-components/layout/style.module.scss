@@ -3,6 +3,11 @@
   height: 100vh;
   background-color: #f9f9f9;
   position: relative;
+
+  @media screen and (max-width: 48rem) {
+    flex-direction: column;
+    overflow: hidden;
+  }
 }
 
 .main {
@@ -21,4 +26,12 @@
   left: 2rem;
   bottom: 2rem;
   z-index: 10;
+
+  @media screen and (max-width: 48rem) {
+    width: 300px;
+    max-width: 300px;
+    min-width: 300px;
+    left: 1rem;
+    bottom: 1rem;
+  }
 }

@@ -11,16 +11,31 @@
   width: 150px;
   background-color: #fff;
   cursor: pointer;
+
+  @media screen and (max-width:48rem) {
+    border-radius: 6px;
+    padding: 12px;
+    gap: 6px;
+    width: 120px;
+  }
 }
 
 .image {
   width: 60px;
+
+  @media screen and (max-width:48rem) {
+    width: 40px;
+  }
 }
 
 .title {
   font-size: 18px;
   font-family: 'Vazir';
   color: rgb(1, 1, 1);
+
+  @media screen and (max-width:48rem) {
+    font-size: 14px;
+  }
 }
 
 .submitButton:disabled {

@@ -1,50 +1,59 @@
-# React + TypeScript + Vite
+# 🚗 Insurance Selection App  
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project implements a **multi-step insurance selection system** where users can register, choose an insurance type, select a vehicle, pick an insurance provider, and apply discounts. Built using **Vite, React, Redux Toolkit, CSS Modules, and SASS**.  
 
-Currently, two official plugins are available:
+## 📌 Features  
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### **Page 1: User Registration**  
+- A form for user registration with the following validation rules:  
+  - **All fields are required**.  
+  - **Mobile number** must be in the correct format.  
+  - **Full Name** should only contain **Persian characters**.  
+  - **Password** must include:
+    - At least **one digit**.  
+    - At least **one uppercase and one lowercase Latin letter**.  
+    - Be between **4 to 10 characters long**.  
+- Displays **error messages** when validation fails.  
+- On successful registration, the **user’s name appears in the Navbar**, and they are redirected to the insurance selection page.  
 
-## Expanding the ESLint configuration
+### **Page 2: Select Insurance Type**  
+- Users can choose **Third-Party Insurance** (mandatory).  
+- **Other insurance types are disabled**.  
+- Clicking **Next** navigates to vehicle selection.  
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### **Page 3: Select Vehicle Type & Model**  
+- Fetches **vehicle types** via the `getVehicleTypes` API.  
+- Once a vehicle type is selected, users can **choose a model** from the available options.  
+- The **Back button** is always enabled.  
+- The **Next button** is enabled only when valid selections are made.  
 
-- Configure the top-level `parserOptions` property like this:
+### **Page 4: Select Insurance Provider**  
+- Fetches a list of **insurance companies** via the `getInsureCompanies` API.  
+- Users can select an insurance provider.  
+- The **Next button** is enabled only after a selection is made.  
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+### **Page 5: Select Discounts & Summary**  
+- Fetches available **third-party insurance discounts** via the `getThirdDiscounts` API.  
+- Users can select applicable discounts.  
+- Clicking **Get Quote** shows a **modal with a summary** of all user-entered details.  
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## 🔧 Tech Stack  
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+### **Frontend**  
+- **React** with React Router for navigation.  
+- **Redux Toolkit** for state management.  
+- **CSS Modules & SASS** for styling.  
+- **Vite** for fast development.  
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+### **Backend API (External)**  
+- **Fetches required data from API endpoints:**  
+  - **Vehicle Types:** `/api/getVehicleTypes`  
+  - **Insurance Companies:** `/api/getInsureCompanies`  
+  - **Discounts:** `/api/getThirdDiscounts`  
+
+## 🚀 Setup  
+
+1. **Clone this repository:**  
+   ```sh
+   git clone https://github.com/your-repo-url.git
+   cd your-repo
