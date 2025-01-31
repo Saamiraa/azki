@@ -58,3 +58,18 @@ This project implements a **multi-step insurance selection system** where users 
 4. **Start the development server:** 
    ```sh
    npm run dev
+
+
+### ⚠️ CORS Policy  
+If you encounter **CORS (Cross-Origin Resource Sharing) issues** while fetching API data, you may need to disable the browser’s CORS policy for local development.  
+
+#### **Temporary Solution (For Development Only)**
+You can start your browser with **CORS disabled**:  
+
+- **Google Chrome (Mac)**:  
+  ```sh
+  open -na "Google Chrome" --args --disable-web-security --user-data-dir=/tmp/cors-disabled
+
+- **Google Chrome (Windows)**: 
+  ```sh
+  chrome.exe --disable-web-security --user-data-dir="C:\chrome_dev_cors"
